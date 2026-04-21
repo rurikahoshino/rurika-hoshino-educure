@@ -20,6 +20,7 @@ public class Main9 {
                 }else{
                     System.out.println("エラー: 0で割ることはできません");
                 }
+                break;
             default:
                 System.out.println("エラー: 無効な演算子です");
                 break;
