@@ -7,8 +7,8 @@ public class Main3 {
             System.out.println(days[i]+": "+temperatures[i]+"度");
         }
         double sum=0;
-        for(int i=0;i<temperatures.length;i++){
-            sum+=temperatures[i];
+        for(double temp:temperatures){
+            sum+=temp;
         }
         double avg=(double)sum/temperatures.length;
         System.out.println("平均温度: "+avg+"度");
