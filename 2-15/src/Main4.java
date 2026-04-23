@@ -4,7 +4,11 @@ public class Main4 {
         int[][] seats = new int[5][6];
         // ここに座席予約のコードを書いてください
         seats[0][2]=1;
-        seats[2][1]=1;
+        seats[1][1]=1;
+        seats[1][4]=1;
+        seats[3][0]=1;
+        seats[3][5]=1;
+        seats[4][2]=1;
 
         System.out.println("予約前の座席状況:");
         displaySeats(seats);
@@ -24,7 +28,7 @@ public class Main4 {
         }
         else{
             seats[row-1][col-1]=1;
-            System.out.println(row+"行"+col+"列の座席を予約しました");
+            System.out.println(row+"行"+col+"列の座席を予約しました。");
         }
 
         System.out.println("予約後の座席状況: ");
