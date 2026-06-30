@@ -2,33 +2,28 @@ public class StudentManager {
     private String[] students = new String[5];
     private int count = 0;
     
-    public void addStudent(String name) {
+    public void addStudent(String name)throws ArrayIndexOutOfBoundsException{
         if(count>=students.length){
-            System.out.println("エラー: これ以上学生を追加できません。リストがいっぱいです。");
-            return;
+            throw new ArrayIndexOutOfBoundsException("これ以上学生を追加できません。リストがいっぱいです。");
         }
         students[count]=name;
         count++;
     }
-    
-    public String getStudent(int id) {
-        if(id<0||id>=students.length){
-            System.out.println("エラー: 無効な学生IDです: "+id);
-            return null;
-        }
 
+    public String getStudent(int id)throws ArrayIndexOutOfBoundsException,NullPointerException{
+        if(id<0||id>=students.length){
+            throw new ArrayIndexOutOfBoundsException("無効な学生IDです: "+id);
+        }
         if(students[id]==null){
-            System.out.println("エラー: 学生ID "+id+"にデータがありません。");
-            return null;
+            throw new NullPointerException("学生ID"+id+"にデータがありません。");
         }
         return students[id];
     }
-    
-    public void updateStudent(int id, String name) {
+
+    public void updateStudent(int id,String name)throws ArrayIndexOutOfBoundsException{
         if(id<0||id>=students.length){
-            System.out.println("エラー: 無効な学生IDです: "+id);
-            return;
+            throw new ArrayIndexOutOfBoundsException("無効な学生IDです: "+id);
         }
-        students[id] = name;
+        students[id]=name;
     }
 }
