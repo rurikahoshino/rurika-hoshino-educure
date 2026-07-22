@@ -1,7 +1,3 @@
-import java.nio.file.ClosedFileSystemException;
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class Equipment implements Cloneable,Comparable<Equipment>{
     private String name;
     private int attack;

@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-
 public class Character implements Comparable<Character> {
     private String name;
     private int hp;
@@ -19,7 +15,7 @@ public class Character implements Comparable<Character> {
 
     @Override
     public int compareTo(Character other){
-        return other.getBattlePower()-this.getBattlePower();
+        return Integer.compare(other.getBattlePower(), this.getBattlePower());
     }
 
     @Override
