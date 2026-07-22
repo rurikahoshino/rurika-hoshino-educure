@@ -21,7 +21,7 @@ class GameCharacter{
         }
     }
 
-    public void sortEpuipments(){
+    public void sortEquipments(){
         Collections.sort(this.equipments);
     }
 

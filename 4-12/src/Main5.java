@@ -29,7 +29,7 @@ public class Main5 {
             System.out.println("装備の比較テスト: NG");
         }
 
-        hero.sortEpuipments();
+        hero.sortEquipments();
         ArrayList<Equipment>sortedList=hero.getEquipments();
 
         if(sortedList.get(0).getPower()==100&&

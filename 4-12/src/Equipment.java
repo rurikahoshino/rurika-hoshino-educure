@@ -34,7 +34,7 @@ public class Equipment implements Cloneable,Comparable<Equipment>{
 
     @Override
     public int compareTo(Equipment other){
-        return other.getPower()-this.getPower();
+        return Integer.compare(other.getPower(), this.getPower());
     }
 
     @Override
