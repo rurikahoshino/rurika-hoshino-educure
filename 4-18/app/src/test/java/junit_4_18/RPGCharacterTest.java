@@ -2,6 +2,7 @@ package junit_4_18;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class RPGCharacterTest {
@@ -39,11 +40,20 @@ public class RPGCharacterTest {
         character.levelUp();
         assertEquals(99, character.getLevel(),"レベルが99になるはず");
 
+        assertEquals(1080, character.getHP(),"レベル99のHPは1080であるはず");
+        assertEquals(540, character.getMP(),"レベル99のMPは540であるはず");
+
         try{
             character.levelUp();
             fail("最大レベルで例外が発生するはず");
         }catch(IllegalStateException e){
             assertEquals("最大レベルに達しています", e.getMessage(),"例外メッセージが一致するはず");
         }
+
+        IllegalStateException exception=assertThrows(
+            IllegalStateException.class,()->character.levelUp(),
+            "最大レベルで例外が発生するはず" 
+        );
+        assertEquals("最大レベルに達しています", exception.getMessage(),"例外メッセージが一致するはず");
     }
 }
